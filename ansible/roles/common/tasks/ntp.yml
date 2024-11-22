@@ -1,0 +1,32 @@
+---
+- name: install ntp
+  become: yes
+  apt:
+    update_cache: no
+    state: present
+    name: ntp
+
+- name: Check if systemd-timesyncd service exists
+  become: yes
+  command: systemctl status systemd-timesyncd
+  ignore_errors: yes
+  register: timesyncd_status
+
+- name: Stop and disable systemd-timesyncd if it exists
+  become: yes
+  service:
+    name: systemd-timesyncd
+    state: stopped
+    enabled: no
+  when: timesyncd_status.rc != 4 and timesyncd_status.rc != 5      #Return code 4 means service unknown, 5 means service not found
+
+- name: ntp config file
+  become: yes
+  template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart ntp
+...

@@ -1,0 +1,106 @@
+[1mdiff --git a/config/settings.yml b/config/settings.yml[m
+[1mindex 8044a30..7441779 100644[m
+[1m--- a/config/settings.yml[m
+[1m+++ b/config/settings.yml[m
+[36m@@ -2,9 +2,9 @@[m
+ # base station configurations[m
+ #   latitude: south values are negative[m
+ #   longitude: west values are negative[m
+[31m-latitude: 40.712776[m
+[31m-longitude: -74.005974[m
+[31m-altitude: 0.0[m
+[32m+[m[32mlatitude: 29.301001[m
+[32m+[m[32mlongitude: -81.113901[m
+[32m+[m[32maltitude: 9.0[m
+ [m
+ #Website language settings[m
+ #   lang_setting: see the 'webpanel/App/Lang' folder for available[m
+[36m@@ -23,14 +23,14 @@[m [mntp_server: ''[m
+ receiver_type: 'rtlsdr'[m
+ [m
+ noaa_decoder: 'wxtoimg'[m
+[31m-meteor_decoder: 'meteordemod'[m
+[32m+[m[32mmeteor_decoder: 'satdump'[m
+ [m
+ # test settings when running test scripts[m
+ #   test_gain - gain to use for scanner test scripts[m
+ #   test_sdr_device_id - device ID of the SDR device to be used for scanner test scripts[m
+ #   test_enable_bias_tee - whether to enable bias tee when running scanner test scripts[m
+ #   test_freq_offset - receiver frequency offset (PPM)[m
+[31m-test_gain: 29.7[m
+[32m+[m[32mtest_gain: 44.5[m
+ test_sdr_device_id: 0[m
+ test_enable_bias_tee: false[m
+ test_freq_offset: 0[m
+[36m@@ -49,7 +49,7 @@[m [mtest_freq_offset: 0[m
+ #   use_device_string - whether to use the device string scheduling passes when you have multiple SDR devices connected of the same type (most users should leave it to "false")[m
+ [m
+ noaa_memory_threshold: 50[m
+[31m-meteor_m2_memory_threshold: 10[m
+[32m+[m[32mmeteor_m2_memory_threshold: 2000[m
+ [m
+ select_best_overlapping_passes: true[m
+ select_meteor_pass_over_noaa: true[m
+[36m@@ -58,32 +58,32 @@[m [muse_device_string: false[m
+ noaa_15_schedule: true[m
+ noaa_15_sdr_device_id: 0[m
+ noaa_15_freq_offset: 0[m
+[31m-noaa_15_enable_bias_tee: false[m
+[31m-noaa_15_gain: 29.7[m
+[32m+[m[32mnoaa_15_enable_bias_tee: true[m
+[32m+[m[32mnoaa_15_gain: 44.5[m
+ noaa_15_sun_min_elevation: 6[m
+ noaa_15_sat_min_elevation: 30[m
+ [m
+ noaa_18_schedule: true[m
+ noaa_18_sdr_device_id: 0[m
+ noaa_18_freq_offset: 0[m
+[31m-noaa_18_enable_bias_tee: false[m
+[31m-noaa_18_gain: 29.7[m
+[32m+[m[32mnoaa_18_enable_bias_tee: true[m
+[32m+[m[32mnoaa_18_gain: 44.5[m
+ noaa_18_sun_min_elevation: 6[m
+ noaa_18_sat_min_elevation: 30[m
+ [m
+ noaa_19_schedule: true[m
+ noaa_19_sdr_device_id: 0[m
+ noaa_19_freq_offset: 0[m
+[31m-noaa_19_enable_bias_tee: false[m
+[31m-noaa_19_gain: 29.7[m
+[32m+[m[32mnoaa_19_enable_bias_tee: true[m
+[32m+[m[32mnoaa_19_gain: 44.5[m
+ noaa_19_sun_min_elevation: 6[m
+ noaa_19_sat_min_elevation: 30[m
+ [m
+ meteor_m2_3_schedule: true[m
+ meteor_m2_3_sdr_device_id: 0[m
+ meteor_m2_3_freq_offset: 0[m
+[31m-meteor_m2_3_enable_bias_tee: false[m
+[31m-meteor_m2_3_gain: 29.7[m
+[32m+[m[32mmeteor_m2_3_enable_bias_tee: true[m
+[32m+[m[32mmeteor_m2_3_gain: 44.5[m
+ meteor_m2_3_schedule_sun_min_elevation: -6[m
+ meteor_m2_3_sun_min_elevation: 6[m
+ meteor_m2_3_sat_min_elevation: 30[m
+[36m@@ -92,8 +92,8 @@[m [mmeteor_m2_3_80k_interleaving: false[m
+ meteor_m2_4_schedule: true[m
+ meteor_m2_4_sdr_device_id: 0[m
+ meteor_m2_4_freq_offset: 0[m
+[31m-meteor_m2_4_enable_bias_tee: false[m
+[31m-meteor_m2_4_gain: 29.7[m
+[32m+[m[32mmeteor_m2_4_enable_bias_tee: true[m
+[32m+[m[32mmeteor_m2_4_gain: 44.5[m
+ meteor_m2_4_schedule_sun_min_elevation: -6[m
+ meteor_m2_4_sun_min_elevation: 6[m
+ meteor_m2_4_sat_min_elevation: 30[m
+[36m@@ -182,18 +182,18 @@[m [mextend_for_annotation: true[m
+ image_annotation_location: 'North'[m
+ produce_polar_az_el_graph: false[m
+ produce_polar_direction_graph: true[m
+[31m-ground_station_location: ''[m
+[31m-antenna_information: ''[m
+[32m+[m[32mground_station_location: 'KQ4KHG Ormond Beach'[m
+[32m+[m[32mantenna_information: 'V-dipole'[m
+ show_sun_elevation: true[m
+ show_pass_direction: true[m
+ produce_spectrogram: false    #NOTE: the spectrogram option here is available for NOAA only, and the spectrogrma produced is 
